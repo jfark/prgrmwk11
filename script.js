@@ -13,7 +13,6 @@ var signedBooksCollection = new Vue ({
 		didIEmbarassMyself: true,
 		inscription: '"For Jessa -Joyce Carol Oates"',
 		writingGroupFriend: false,
-		id: 1,
 	},
 	{
 		author: "Yanagihara, Hanya",
@@ -21,7 +20,6 @@ var signedBooksCollection = new Vue ({
 		didIEmbarassMyself: false,
 		inscription: '"in March 2016: To Jessa - with thanks for reading and keep writing - Hanya Yanagihara"',
 		writingGroupFriend: false,
-		id: 2,
 	},
 	{
 		author: "Gaitskill, Mary",
@@ -29,7 +27,6 @@ var signedBooksCollection = new Vue ({
 		didIEmbarassMyself: true,
 		inscription: '"For Jessa -Mary Gaitskill"',
 		writingGroupFriend: false,
-		id: 3,
 	},
 	{
 		author: "Clemmons, Zinzi",
@@ -37,7 +34,6 @@ var signedBooksCollection = new Vue ({
 		didIEmbarassMyself: false,
 		inscription: '"Jessa, Long time! Enjoy! 7-13-17 Zinzi Clemmons"',
 		writingGroupFriend: true,
-		id: 4,
 	},
 	{
 		author: "Sharma, Akhil",
@@ -45,14 +41,13 @@ var signedBooksCollection = new Vue ({
 		didIEmbarassMyself: true,
 		inscription: '"Dear Jessa, All good wishes. I hope you and your work go well. Akhil Sharma"',
 		writingGroupFriend: false,
-		id: 5,
 	}
 ]
 	},
 	methods: {
 		deleteBook: function(bookObject) {
 			this.signedBook = this.signedBook.filter (function(book) {
-				if (book.id !== bookObject.id) {
+				if (book.title !== bookObject.title) {
 					return true;
 				} else {
 					return false;
@@ -66,7 +61,9 @@ var signedBooksCollection = new Vue ({
 				didIEmbarassMyself: this.awkwardInput,
 				inscription: this.inscription,
 				writingGroupFriend: this.friendInput,
-			}
+			};
+			this.signedBook.push(newBook);
+			this.authorInput = this.titleInput = this.awkwardInput = this.inscription = this.friendInput = "";
 		}
 	}
 })
