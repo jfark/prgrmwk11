@@ -1,6 +1,11 @@
 var signedBooksCollection = new Vue ({
 	el: '.books',
 	data: {
+		authorInput: "",
+		titleInput: "",
+		awkwardInput: "",
+		inscriptionInput: "",
+		friendInput: "",
 		signedBook: [
 	{
 		author: "Oates, Joyce Carol",
@@ -53,6 +58,15 @@ var signedBooksCollection = new Vue ({
 					return false;
 				}
 			})
+		},
+		addBook: function(){
+			let newBook = {
+				author: this.authorInput,
+				title: this.titleInput,
+				didIEmbarassMyself: this.awkwardInput,
+				inscription: this.inscription,
+				writingGroupFriend: this.friendInput,
+			}
 		}
 	}
 })

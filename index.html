@@ -34,6 +34,21 @@
 			</tbody>
 		</table>
 		
+		<form v-on:submit.prevent="addBook">
+			<fieldset>
+				<legend>Add a signed book of your own to the list: </legend>
+				<div class="form-group">
+					<label>Author<input v-model="authorInput" type="text"/></label>
+					<label>Title<input v-model="titleInput" type="text"/></label>
+					<label>Did you embarass yourself during the book signing?<input v-model="awkwardInput"/></label>
+					<label>Inscription<input v-model="inscriptionInput"/></label>
+					<label>Do you know the author?<input v-model="friendInput"/></label>
+				</div>
+				<button type="submit">Add Book</button>
+			</fieldset>
+		</form>
+			
+		
 		<h2>Key:</h2>
 		
 		<p class="embarassing">A tomato-red background indicates that I embarassed myself with the things that I stumbled over saying to the author at the time of getting my respective book signed.</p>
