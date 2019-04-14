@@ -40,7 +40,18 @@ var signedBooksCollection = new Vue ({
 	el: '.books',
 	data: {
 		signedBook: bookArray
+	},
+	methods: {
+		deleteBook:function(bookObject) {
+		this.books = this.books.filter (function(book){
+			if(book.id !== bookObject.id){
+				return true;
+			}else{
+				return false;
+			}
+		})
 	}
+}
 })
 
 

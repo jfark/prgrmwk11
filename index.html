@@ -19,6 +19,7 @@
 					<td>Did I embarass myself during the book signing?</td>
 					<td>Inscription</td>
 					<td>Was I formerly in a writing group with this author?</td>
+					<td>Delete Book?</td>
 				</tr>
 			</thead>
 			<tbody class="books" v-cloak>
@@ -28,6 +29,7 @@
 					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
 					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
 					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
+					<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
 				</tr>
 			</tbody>
 		</table>
