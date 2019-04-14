@@ -11,42 +11,44 @@
 	</header>
 	<main>
 		<p>Before MCAD, I was enrolled in a part-time fiction MFA program at Temple University for a year, and I still try to write fiction, so sometimes I go to readings and get the authors to sign books that I buy from them.</p>
-		<table>
-			<thead>
-				<tr>
-					<td>Author</td>
-					<td>Title</td>
-					<td>Did I embarass myself during the book signing?</td>
-					<td>Inscription</td>
-					<td>Was I formerly in a writing group with this author?</td>
-					<td>Delete Book?</td>
-				</tr>
-			</thead>
-			<tbody class="books" v-cloak>
-				<tr v-for="book in signedBook" v-cloak>
-					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
-					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
-					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
-					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
-					<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
-					<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="soManyBooks">
+			<table>
+				<thead>
+					<tr>
+						<td>Author</td>
+						<td>Title</td>
+						<td>Did I embarass myself during the book signing?</td>
+						<td>Inscription</td>
+						<td>Was I formerly in a writing group with this author?</td>
+						<td>Delete Book?</td>
+					</tr>
+				</thead>
+				<tbody class="books" v-cloak>
+					<tr v-for="book in signedBook" v-cloak>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
+						<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
+					</tr>
+				</tbody>
+			</table>
 		
-		<form v-on:submit.prevent="addBook">
-			<fieldset>
-				<legend>Add a signed book of your own to the list: </legend>
-				<div class="form-group">
-					<label>Author<input v-model="authorInput" type="text"/></label>
-					<label>Title<input v-model="titleInput" type="text"/></label>
-					<label>Did you embarass yourself during the book signing?<input v-model="awkwardInput"/></label>
-					<label>Inscription<input v-model="inscriptionInput"/></label>
-					<label>Do you know the author?<input v-model="friendInput"/></label>
-				</div>
-				<button type="submit">Add Book</button>
-			</fieldset>
-		</form>
+			<form v-on:submit.prevent="addBook">
+				<fieldset>
+					<legend>Add a signed book of your own to the list: </legend>
+					<div class="form-group">
+						<label>Author<input v-model="authorInput" type="text"/></label>
+						<label>Title<input v-model="titleInput" type="text"/></label>
+						<label>Did you embarass yourself during the book signing?<input v-model="awkwardInput"/></label>
+						<label>Inscription<input v-model="inscriptionInput"/></label>
+						<label>Do you know the author?<input v-model="friendInput"/></label>
+					</div>
+					<button type="submit">Add Book</button>
+				</fieldset>
+			</form>
+		</div>
 			
 		
 		<h2>Key:</h2>

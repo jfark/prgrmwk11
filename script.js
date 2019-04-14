@@ -1,5 +1,5 @@
 var signedBooksCollection = new Vue ({
-	el: '.books',
+	el: ".soManyBooks",
 	data: {
 		authorInput: "",
 		titleInput: "",
