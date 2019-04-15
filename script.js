@@ -6,6 +6,8 @@ var signedBooksCollection = new Vue ({
 		awkwardInput: "",
 		inscriptionInput: "",
 		friendInput: "",
+		yes: true,
+		no: false,
 		signedBook: [
 	{
 		author: "Oates, Joyce Carol",
@@ -64,10 +66,6 @@ var signedBooksCollection = new Vue ({
 			};
 			this.signedBook.push(newBook);
 			this.authorInput = this.titleInput = this.awkwardInput = this.inscription = this.friendInput = "";
-		},
-		checkText: function(){
-			if (this.authorInput !== "yes") {
-				alert("Who wrote the book you'd like to add?");
 		}
 	}
 })
