@@ -43,8 +43,8 @@
 						<label>Title: <input v-model="titleInput" type="text"/></label>
 						<label>Did you embarass yourself during the book signing? 
 							<select v-model="awkwardInput">
-								<option value="true">True</option>
-								<option value="false">False</option>
+								<option value="true" v-model="true">True</option>
+								<option value="false" v-model="false">False</option>
 							</select>
 						</label>
 						<label>Inscription: <input v-model="inscriptionInput"/></label>
