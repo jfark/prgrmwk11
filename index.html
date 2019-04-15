@@ -25,11 +25,11 @@
 				</thead>
 				<tbody class="soManyBooks" v-cloak>
 					<tr v-for="book in signedBook" v-cloak>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself===true, oldfriend: book.writingGroupFriend===true}">{{book.author}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself===true, oldfriend: book.writingGroupFriend===true}" class="title">{{book.title}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself===true, oldfriend: book.writingGroupFriend===true}">{{book.didIEmbarassMyself}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself===true, oldfriend: book.writingGroupFriend===true}">{{book.inscription}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself===true, oldfriend: book.writingGroupFriend===true}">{{book.writingGroupFriend}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
 						<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
 					</tr>
 				</tbody>
@@ -43,15 +43,15 @@
 						<label>Title: <input v-model="titleInput" type="text"/></label>
 						<label>Did you embarass yourself during the book signing? 
 							<select v-model="awkwardInput">
-								<option value="true" v-model="true">True</option>
-								<option value="false" v-model="false">False</option>
+								<option v-bind:value="true">True</option>
+								<option v-bind:value="false">False</option>
 							</select>
 						</label>
 						<label>Inscription: <input v-model="inscriptionInput"/></label>
 						<label>Do you know the author? 
 							<select v-model="friendInput">
-								<option value="yes">Yes</option>
-								<option value="no">No</option>
+								<option v-bind:value="true">True</option>
+								<option v-bind:value="false">False</option>
 							</select>
 						</label>
 					</div>
