@@ -49,3 +49,19 @@ tr, td {
 	
 	border: 10px solid deepskyblue;
 }
+
+form {
+	padding: 50px 0px;
+}
+
+fieldset {
+	color: olive;
+}
+
+label {
+	display: block;
+	padding: 10px 0px;
+	font-style: italic;
+	font-weight: bold;
+}
+
