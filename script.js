@@ -6,8 +6,8 @@ var signedBooksCollection = new Vue ({
 		awkwardInput: "",
 		inscriptionInput: "",
 		friendInput: "",
-		yes: true,
-		no: false,
+		true: true,
+		false: false,
 		signedBook: [
 	{
 		author: "Oates, Joyce Carol",
