@@ -41,9 +41,19 @@
 					<div class="form-group">
 						<label>Author: <input v-model="authorInput" type="text"/></label>
 						<label>Title: <input v-model="titleInput" type="text"/></label>
-						<label>Did you embarass yourself during the book signing? <input v-model="awkwardInput"/></label>
+						<label>Did you embarass yourself during the book signing? 
+							<select v-model="awkwardInput">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</label>
 						<label>Inscription: <input v-model="inscriptionInput"/></label>
-						<label>Do you know the author? <input v-model="friendInput"/></label>
+						<label>Do you know the author? 
+							<select v-model="friendInput">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</label>
 					</div>
 					<button type="submit">Add Book</button>
 				</fieldset>
