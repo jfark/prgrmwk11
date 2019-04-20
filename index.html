@@ -24,12 +24,12 @@
 					</tr>
 				</thead>
 				<tbody class="soManyBooks" v-cloak>
-					<tr v-for="book in signedBook" v-cloak>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
+					<tr v-for="book in signedBook" v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">
+						<td>{{book.author}}</td>
+						<td class="title">{{book.title}}</td>
+						<td>{{book.didIEmbarassMyself}}</td>
+						<td>{{book.inscription}}</td>
+						<td>{{book.writingGroupFriend}}</td>
 						<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
 					</tr>
 				</tbody>
